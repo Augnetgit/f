@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: web-admin-feign
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+
+server:
+  port: 8765
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.2.113:8761/eureka/
+
+#Feign中使用熔断器，Feign自带溶洞器，默认是关闭的，此处打开
+feign:
+  hystrix:
+    enabled: true
